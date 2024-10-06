@@ -17,13 +17,13 @@ int main(int argc, char* argv[]) {
     
     int need_to_lock = 0;
 
-    int upper = min(R,r);
-    int lower = max(L,l);
+    int upper = min(R, r);
+    int lower = max(L, l);
 
     bool extends_up = R != r;
     bool extends_down = L != l;
 
-    bool range_exists = min(r,R) >= max(l,L);
+    bool range_exists = min(r, R) >= max(l, L);
     
     if (range_exists) {
       need_to_lock += extends_up + extends_down + (upper - lower);

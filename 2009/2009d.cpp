@@ -28,6 +28,7 @@ int main(int argc, char* argv[]) {
 	++zero_array[x];
 	++zero_count;
       }
+      
       if (y == 1) {
 	++one_array[x];
 	++one_count;

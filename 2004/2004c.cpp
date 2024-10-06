@@ -13,7 +13,9 @@ int main(int argc, char* argv[]){
     cin >> n >> k;
 
     vector<long long> items(n, 0);
-    for (int i = 0; i < n; ++i) cin >> items[i];
+    for (int i = 0; i < n; ++i) {
+      cin >> items[i];
+    }
 
     sort(items.begin(), items.end(), greater());
 

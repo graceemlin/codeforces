@@ -14,8 +14,10 @@ int main(int argc, char* argv[]) {
     int n;
     cin >> n;
     
-    vector<int> points(n,0);
-    for (int i = 0; i < n; ++i) cin >> points[i];
+    vector<int> points(n, 0);
+    for (int i = 0; i < n; ++i) {
+      cin >> points[i];
+    }
     
     bool can_insert = (int)points.size() == 2 &&
       abs(points[1] - points[0]) > 1;
