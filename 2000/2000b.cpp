@@ -13,12 +13,12 @@ int main(int argc, char* argv[]) {
     cin >> n;
 
     vector<int> passengers(n, 0);
-    for (int i = 0; i < n; ++i) cin >> passengers[i];
-
-    int first = passengers[0];
+    for (int i = 0; i < n; ++i) {
+      cin >> passengers[i];
+    }
+    
     set<int> already;
-
-    already.insert(first);
+    already.insert(passengers[0]);
     
     bool bad_order = false;
     for (int i = 1; i < n; ++i) {

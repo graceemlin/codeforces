@@ -13,7 +13,9 @@ int main(int argc, char* argv[]) {
     cin >> n;
     
     vector<int> points(n, 0);
-    for (int i = 0; i < n; ++i) cin >> points[i];
+    for (int i = 0; i < n; ++i) {
+      cin >> points[i];
+    }
     
     string indices;
     cin >> indices;
@@ -30,6 +32,7 @@ int main(int argc, char* argv[]) {
     
     int first = (int)indices.find('L');
     int last = (int)indices.find_last_of('R');
+
     if (first > last) {
       cout << 0 << endl;
       continue;
@@ -45,14 +48,13 @@ int main(int argc, char* argv[]) {
 	  running_total += (prefix_sums[j] - prefix_sums[i - 1]);
 	  ++i;
 	  --j;
-	}
-	else if (indices[i] == 'R') {
+	} else if (indices[i] == 'R') {
 	  ++i;
-	}
-	else if (indices[j] == 'L') {
+	} else if (indices[j] == 'L') {
 	  --j;
 	}
       }
+      
       cout << running_total << endl;
     }
   }
