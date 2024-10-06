@@ -37,17 +37,20 @@ int main(int argc, char* argv[]) {
 	continue;
       } else {
 	unordered_map<int, int> isomorphic_a, isomorphic_b;
+	
 	isomorphic_a[a_elements[0]] = 0;
 	isomorphic_b[b_elements[i][0]] = 0;
 
-	for (int j = 1; j < length; ++j){
+	for (int j = 1; j < length; ++j) {
 	  if (!isomorphic_a.count(a_elements[j])) {
 	    isomorphic_a[a_elements[j]] = -1;
 	  }
+	  
 	  if (!isomorphic_b.count(b_elements[i][j])) {
 	    isomorphic_b[b_elements[i][j]] = -1;
 	  }
-	  if ((isomorphic_a[a_elements[j]] != isomorphic_b[b_elements[i][j]])){
+	  
+	  if ((isomorphic_a[a_elements[j]] != isomorphic_b[b_elements[i][j]])) {
 	    cout << "NO" << endl;
 	    isomorphic = false;
 	    break;
