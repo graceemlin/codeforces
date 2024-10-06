@@ -50,7 +50,7 @@ int main(int argc, char* argv[]) {
 	    isomorphic_b[b_elements[i][j]] = -1;
 	  }
 	  
-	  if ((isomorphic_a[a_elements[j]] != isomorphic_b[b_elements[i][j]])) {
+	  if (isomorphic_a[a_elements[j]] != isomorphic_b[b_elements[i][j]]) {
 	    cout << "NO" << endl;
 	    isomorphic = false;
 	    break;
