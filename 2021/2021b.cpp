@@ -47,24 +47,26 @@ int main(int argc, char* argv[]) {
       continue;
     }
 
-    map<long long, vector<long long>> visited;
+    map<long long, vector<long long>> buckets;
     for (long long element: elements) {
-      visited[element % x].push_back(element);
+      buckets[element % x].push_back(element);
     }
 
     long long global_min = n;
     for (long long i = 0; i < x; ++i) {
       long long bucket_min = LONG_LONG_MAX;
       long long curr_val = i;
-      if (visited[i].size() == 0) {
+      long long bucket_size = buckets[i].size();
+      
+      if (bucket_size == 0) {
 	global_min = min(global_min, i);
 	continue;
       }
       
-      sort(visited[i].begin(), visited[i].end());
+      sort(buckets[i].begin(), buckets[i].end());
       
-      for (long long j = 0; j < (long long)visited[i].size(); ++j) {
-	if (visited[i][j] > curr_val) {
+      for (long long j = 0; j < bucket_size; ++j) {
+	if (buckets[i][j] > curr_val) {
 	  bucket_min = curr_val;
 	  break;
 	}	
