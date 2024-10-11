@@ -34,12 +34,10 @@ int main(int argc, char* argv[]) {
     
     long long ops = 0;
     bool parity_change_detected = false;
-    
     while (!parity_change_detected) {
       ++ops;
       for (long long i = 0; i < n; ++i) {
 	elements[i] = floor(elements[i] / 2);
-	
 	bool curr_parity = elements[i] % 2;	
 	bool original_parity = parity.front();
 	
