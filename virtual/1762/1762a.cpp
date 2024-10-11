@@ -17,10 +17,7 @@ int main(int argc, char* argv[]) {
       cin >> elements[i];
     }
     
-    long long sum = 0;
-    for (long long element: elements) {
-      sum += element;
-    }
+    long long sum = accumulate(elements.begin(), elements.end(), 0);
 
     if (sum % 2 == 0) {
       cout << 0 << endl;
