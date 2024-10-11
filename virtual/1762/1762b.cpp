@@ -26,13 +26,13 @@ int main(int argc, char* argv[]) {
     sort(elements.begin(), elements.end());
     
     cout << n << endl;
-    
+
+    long long target = 1;
     for (int i = 0; i < n; ++i) {
       list<long long>& indices = value_to_index.find(elements[i])->second;
       long long index = *indices.begin();
       indices.erase(indices.begin());
       
-      long long target = 1;
       while (elements[i] > target) {
 	target *= 2;
       }
