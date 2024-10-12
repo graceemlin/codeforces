@@ -24,28 +24,19 @@ int main(int argc, char* argv[]) {
       continue;
     }
 
-    queue<bool> parity;
-    for (long long element: elements) {
-      parity.push(element % 2);
-    }
-    
     long long ops = 0;
     
     bool parity_change_detected = false;
     while (!parity_change_detected) {
       ++ops;
       for (long long i = 0; i < n; ++i) {
-	elements[i] = floor(elements[i] / 2);
-	
+	bool original_parity = elements[i] % 2;	
+	elements[i] /= 2;
 	bool curr_parity = elements[i] % 2;	
-	bool original_parity = parity.front();
 	if (curr_parity != original_parity) {
 	  parity_change_detected = true;
 	  break;
 	}
-
-	parity.pop();
-	parity.push(original_parity);
       }
     }
 
