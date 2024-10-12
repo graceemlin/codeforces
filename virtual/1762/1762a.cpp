@@ -32,6 +32,7 @@ int main(int argc, char* argv[]) {
       for (long long i = 0; i < n; ++i) {
 	bool original_parity = elements[i] % 2;	
 	elements[i] /= 2;
+	
 	bool curr_parity = elements[i] % 2;	
 	if (curr_parity != original_parity) {
 	  parity_change_detected = true;
