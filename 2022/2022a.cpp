@@ -23,10 +23,10 @@ int main(int argc, char* argv[]) {
     long long happy_people = 0;
     long long empty_seats = r * 2;
     
-    for (long long family_members : families) {
-      bool is_odd_family = family_members % 2;
-      empty_seats -= family_members;
-      happy_people += family_members - is_odd_family;      
+    for (int i = 0; i < n; ++i) {
+      bool is_odd_family = families[i] % 2;
+      empty_seats -= families[i];
+      happy_people += families[i] - is_odd_family;      
     }
     
     happy_people += empty_seats;
