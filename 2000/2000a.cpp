@@ -6,7 +6,6 @@ using namespace std;
 int main(int argc, char* argv[]) {
   ios::sync_with_stdio(0);
   cin.tie(0);
-  
   int t;
   cin >> t;
   
@@ -14,7 +13,7 @@ int main(int argc, char* argv[]) {
     string n;
     cin >> n;
     
-    int length = (int)n.size();
+    int length = n.size();
 
     bool yes_cond_1 = length > 2 &&
       n[0] == '1' &&

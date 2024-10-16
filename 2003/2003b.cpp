@@ -5,7 +5,6 @@ using namespace std;
 int main(int argc, char* argv[]) {
   ios::sync_with_stdio(0);
   cin.tie(0);
-
   int t;
   cin >> t;
   
@@ -25,8 +24,3 @@ int main(int argc, char* argv[]) {
     cout << final_val << endl;
   }
 }
-
-//parity matters
-//some trick exists?
-//turtle wants max, piggy wants min
-//can calculation be performed instead of playing out game?
