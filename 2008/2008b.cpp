@@ -32,7 +32,7 @@ int main(int argc, char* argv[]) {
 	}
       }
       
-      for (int last = n - 1; last >= (n - row); --last) {
+      for (int last = n - 1; last >= n - row; --last) {
 	if (s[last] != '1') {
 	  square_possible = false;
 	  break;
@@ -40,7 +40,7 @@ int main(int argc, char* argv[]) {
       }
       
       for (int i = 1; i < row - 1; ++i) {
-	if (s[(i * row)] != '1' || s[(i * row) + row - 1] != '1') {
+	if (s[i * row] != '1' || s[(i * row) + row - 1] != '1') {
 	  square_possible = false;
 	  break;
 	}
