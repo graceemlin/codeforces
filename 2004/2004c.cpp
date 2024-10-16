@@ -5,12 +5,15 @@ using namespace std;
 int main(int argc, char* argv[]){
   ios::sync_with_stdio(0);
   cin.tie(0);
+  
   int t;
   cin >> t;
   
   while (t--) {
-    long long n, k;
-    cin >> n >> k;
+    long long n;
+    cin >> n;
+    long long k;
+    cin >> k;
 
     vector<long long> items(n, 0);
     for (int i = 0; i < n; ++i) {
@@ -40,6 +43,6 @@ int main(int argc, char* argv[]){
       }
     }
     
-    cout << (alice_total - bob_total) << endl;
+    cout << alice_total - bob_total << endl;
   }
 }

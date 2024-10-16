@@ -5,9 +5,10 @@ using namespace std;
 int main(int argc, char* argv[]) {
   ios::sync_with_stdio(0);
   cin.tie(0);
-
+  
   int t;
   cin >> t;
+  
   while (t--) {
     int n;
     cin >> n;
@@ -22,7 +23,7 @@ int main(int argc, char* argv[]) {
       cout << n;
       for (int k = n - 1; k > 0; k -= 2) {
 	cout << ' ' << k;
-      }
+      } 
       cout << endl;
     }
   }

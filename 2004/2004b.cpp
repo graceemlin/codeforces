@@ -6,14 +6,20 @@ using namespace std;
 int main(int argc, char* argv[]) {
   ios::sync_with_stdio(0);
   cin.tie(0);
+  
   int t;
   cin >> t;
   
   while (t--) {
-    int l, r;
-    cin >> l >> r;
-    int L, R;
-    cin >> L >> R;
+    int l;
+    cin >> l;
+    int r;
+    cin >> r;
+    
+    int L;
+    cin >> L;
+    int R;
+    cin >> R;
     
     int need_to_lock = 0;
 
@@ -30,6 +36,7 @@ int main(int argc, char* argv[]) {
     } else {
       need_to_lock = 1;
     }
+    
     cout << need_to_lock << endl;
   }
 }

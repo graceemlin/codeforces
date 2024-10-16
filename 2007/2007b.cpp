@@ -5,6 +5,7 @@ using namespace std;
 int main(int argc, char* argv[]) {
   ios::sync_with_stdio(0);
   cin.tie(0);
+  
   int t;
   cin >> t;
 
@@ -22,7 +23,9 @@ int main(int argc, char* argv[]) {
 
     int answer = 0;
     for (int i = 0; i < n; ++i) {
-      if (integers[i] > answer) answer = integers[i];
+      if (integers[i] > answer) {
+	answer = integers[i];
+      }
     }
     
     while (m--) {
@@ -48,6 +51,7 @@ int main(int argc, char* argv[]) {
       
       cout << answer << " ";
     }
+    
     cout << endl;
   }
 }

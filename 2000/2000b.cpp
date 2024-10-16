@@ -5,6 +5,7 @@ using namespace std;
 int main(int argc, char* argv[]) {
   ios::sync_with_stdio(0);
   cin.tie(0);
+  
   int t;
   cin >> t;
   
@@ -23,7 +24,7 @@ int main(int argc, char* argv[]) {
     bool bad_order = false;
     for (int i = 1; i < n; ++i) {
       if (already.count(passengers[i] + 1) || already.count(passengers[i] - 1)) {
-	  already.insert(passengers[i]);
+	already.insert(passengers[i]);
       } else {
 	cout << "NO" << endl;
 	bad_order = true;

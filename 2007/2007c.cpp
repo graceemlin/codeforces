@@ -25,7 +25,9 @@ int main(int argc, char* argv[]) {
 
     long long max_original = 0;
     for (int i = 0; i < n; ++i) {
-      if (elements[i] > max_original) max_original = elements[i];
+      if (elements[i] > max_original) {
+	max_original = elements[i];
+      }
     }
 
     long long mod_val = gcd(a, b);

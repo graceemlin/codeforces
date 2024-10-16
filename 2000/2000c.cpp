@@ -7,6 +7,7 @@ using namespace std;
 int main(int argc, char* argv[]) {
   ios::sync_with_stdio(0);
   cin.tie(0);
+
   int t;
   cin >> t;
   
@@ -28,7 +29,7 @@ int main(int argc, char* argv[]) {
     }
     
     for (int i = 0; i < m; ++i) {
-      int length = (int)b_elements[i].size();
+      int length = b_elements[i].size();
       bool isomorphic = true;
       
       if (length != n) {
