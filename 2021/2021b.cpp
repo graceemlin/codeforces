@@ -2,7 +2,7 @@
 
 using namespace std;
 
-int compute_mex(vector<long long>& ary);
+int compute_mex(const vector<long long>& ary);
 
 int main(int argc, char* argv[]) {
   ios::sync_with_stdio(0);
@@ -25,6 +25,7 @@ int main(int argc, char* argv[]) {
     bool can_start = *min_element(elements.begin(), elements.end()) == 0;
 
     if (no_ops && can_start) {
+      sort (elements.begin(), elements.end());
       long long mex_value = compute_mex(elements);
       cout << mex_value << endl;
       continue;
@@ -67,11 +68,9 @@ int main(int argc, char* argv[]) {
   }
 }
 
-int compute_mex(vector<long long>& ary) {
+int compute_mex(const vector<long long>& ary) {
   long long curr_num = 0;
-  long long prev_num = -1;
-  
-  sort(ary.begin(), ary.end());      
+  long long prev_num = -1;   
   
   for (long long x: ary) {
     if (curr_num == x && prev_num != x) {
