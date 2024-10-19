@@ -2,22 +2,7 @@
 
 using namespace std;
 
-int compute_mex(vector<long long>& ary) {
-  long long curr_num = 0;
-  long long prev_num = -1;
-  
-  sort(ary.begin(), ary.end());      
-  
-  for (long long x: ary) {
-    if (curr_num == x && prev_num != x) {
-      prev_num = curr_num++;
-    } else if (curr_num != x && prev_num != x) {
-      break;
-    }
-  }
-  
-  return curr_num;
-}
+int compute_mex(vector<long long>& ary);
 
 int main(int argc, char* argv[]) {
   ios::sync_with_stdio(0);
@@ -80,4 +65,21 @@ int main(int argc, char* argv[]) {
     
     cout << global_min << endl;
   }
+}
+
+int compute_mex(vector<long long>& ary) {
+  long long curr_num = 0;
+  long long prev_num = -1;
+  
+  sort(ary.begin(), ary.end());      
+  
+  for (long long x: ary) {
+    if (curr_num == x && prev_num != x) {
+      prev_num = curr_num++;
+    } else if (curr_num != x && prev_num != x) {
+      break;
+    }
+  }
+  
+  return curr_num;
 }
