@@ -2,6 +2,23 @@
 
 using namespace std;
 
+int compute_mex(vector<long long>& elements) {
+  long long curr_nat = 0;
+  long long last = -1;
+  
+  sort(elements.begin(), elements.end());      
+  
+  for (long long element: elements) {
+    if (curr_nat == element && last != element) {
+      last = curr_nat++;
+    } else if (curr_nat != element && last != element) {
+      break;
+    }
+  }
+  
+  return curr_nat;
+}
+
 int main(int argc, char* argv[]) {
   ios::sync_with_stdio(0);
   cin.tie(0);
@@ -21,22 +38,10 @@ int main(int argc, char* argv[]) {
 
     bool no_ops = x >= n;
     bool can_start = *min_element(elements.begin(), elements.end()) == 0;
-    
+
     if (no_ops && can_start) {
-      long long curr_nat = 0;
-      long long last = -1;
-      
-      sort(elements.begin(), elements.end());      
-      
-      for (long long element: elements) {
-	if (curr_nat == element && last != element) {
-	  last = curr_nat++;
-	} else if (curr_nat != element && last != element) {
-	  break;
-	}
-      }
-      
-      cout << curr_nat << endl;
+      long long mex_value = compute_mex(elements);
+      cout << mex_value << endl;
       continue;
     } else if (no_ops) {
       cout << 0 << endl;
