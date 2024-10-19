@@ -31,8 +31,6 @@ int main(int argc, char* argv[]) {
       for (long long element: elements) {
 	if (curr_nat == element && last != element) {
 	  last = curr_nat++;
-	} else if (curr_nat == element && last == element) {
-	  last = element;
 	} else if (curr_nat != element && last != element) {
 	  break;
 	}
