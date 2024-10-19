@@ -2,21 +2,21 @@
 
 using namespace std;
 
-int compute_mex(vector<long long>& elements) {
-  long long curr_nat = 0;
-  long long last = -1;
+int compute_mex(vector<long long>& ary) {
+  long long curr_num = 0;
+  long long prev_num = -1;
   
-  sort(elements.begin(), elements.end());      
+  sort(ary.begin(), ary.end());      
   
-  for (long long element: elements) {
-    if (curr_nat == element && last != element) {
-      last = curr_nat++;
-    } else if (curr_nat != element && last != element) {
+  for (long long x: ary) {
+    if (curr_num == x && prev_num != x) {
+      prev_num = curr_num++;
+    } else if (curr_num != x && prev_num != x) {
       break;
     }
   }
   
-  return curr_nat;
+  return curr_num;
 }
 
 int main(int argc, char* argv[]) {
