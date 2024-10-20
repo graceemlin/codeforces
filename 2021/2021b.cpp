@@ -69,16 +69,16 @@ int main(int argc, char* argv[]) {
 }
 
 int compute_mex(const vector<long long>& ary) {
-  long long curr_num = 0;
-  long long prev_num = -1;   
+  long long curr = 0;
+  long long prev = -1;   
   
   for (long long x: ary) {
-    if (curr_num == x && prev_num != x) {
-      prev_num = curr_num++;
-    } else if (curr_num != x && prev_num != x) {
+    if (curr == x && prev != x) {
+      prev = curr++;
+    } else if (curr != x && prev != x) {
       break;
     }
   }
   
-  return curr_num;
+  return curr;
 }

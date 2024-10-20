@@ -17,9 +17,9 @@ int main(int argc, char* argv[]) {
 
     bool block_begin = values[0] == '1';
     bool block_end = values[n - 1] == '1';
-    bool center_block = values.find("11") != string::npos;
+    bool block_center = values.find("11") != string::npos;
     
-    bool alice_wins = block_begin || block_end || center_block;
+    bool alice_wins = block_begin || block_end || block_center;
     
     cout << (alice_wins ? "YES" : "NO") << endl;
   }
