@@ -40,19 +40,15 @@ int main(int argc, char* argv[]) {
       cout << --bitmask << endl;
       
       int complement = ~(n - 1) & bitmask;
+      set<int> magic_nums = {complement, n - 1, n - 2, 1};
+      int free_odd = magic_nums.count(3) ? 5 : 3;
+      magic_nums.insert(free_odd);
+      
       permutation[n - 1] = complement;
       permutation[n - 2] = n - 1;
       permutation[n - 3] = n - 2;
       permutation[n - 4] = 1;
-      
-      set<int> magic_nums = {complement, n - 1, n - 2, 1};
-      for (int i = 0; i < n; ++i) {
-	if ((i % 2) && !magic_nums.count(i)) {
-	  magic_nums.insert(i);
-	  permutation[n - 5] = i;
-	  break;
-	}
-      }
+      permutation[n - 5] = free_odd;
       
       int curr_num = 2;
       for (int i = 0; i < n - 5; ++i) {
