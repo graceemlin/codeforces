@@ -20,11 +20,11 @@ int main(int argc, char* argv[]) {
     int64_t c;
     cin >> c;
 
-    int64_t diag_dist = m;
+    int64_t manhattan_diag = m;
     int64_t diags_count = n - r;
     int64_t grid_size = n * m;
     int64_t people_before = m * (r - 1) + c;
-    int64_t manhattan_dist = diag_dist * diags_count + grid_size - people_before - diags_count;
+    int64_t manhattan_dist = manhattan_diag * diags_count + grid_size - people_before - diags_count;
     
     cout << manhattan_dist << endl;
   }

@@ -13,7 +13,7 @@ int main(int argc, char* argv[]) {
     int64_t n;
     cin >> n;
 
-    vector<int64_t>elements(n);
+    vector<int64_t> elements(n);
     for (int i = 0; i < n; ++i) {
       cin >> elements[i];
     }
