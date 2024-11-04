@@ -59,7 +59,6 @@ int main(int argc, char* argv[]) {
   }
 }
 
-
 void traverse(const vector<vector<int>>& mat, vector<int>& ary, int r, int l, int b, int t) {
   for (int i = l; i <= r; ++i) {
     ary.push_back(mat[t][i]);
