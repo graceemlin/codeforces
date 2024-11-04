@@ -16,14 +16,13 @@ int main(int argc, char* argv[]) {
 
     string a;
     cin >> a;
-
-    int insertions = 0;
     
     map<char, int> mp;
     for (int i = 0; i < a.size(); ++i) {
       mp[a[i]]++;
     }
 
+    int insertions = 0;
     for (int i = 0; i < 7; ++i) {
       if (mp[i + 'A'] < m) {
 	insertions += m - mp[i + 'A'];
