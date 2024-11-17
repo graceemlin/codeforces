@@ -17,12 +17,12 @@ int main(int argc, char* argv[]) {
     cin >> L;
 
     vector<tuple<int64_t, int64_t, bool>> hurdles_and_power_ups;
+	  
     for (int i = 0; i < n; ++i) {
       int64_t l;
       cin >> l;
       int64_t r;
       cin >> r;
-
       hurdles_and_power_ups.push_back({l, r, 0});
     }
 
@@ -31,7 +31,6 @@ int main(int argc, char* argv[]) {
       cin >> x;
       int64_t v;
       cin >> v;
-      
       hurdles_and_power_ups.push_back({x, v, 1});
     }
 
@@ -40,13 +39,14 @@ int main(int argc, char* argv[]) {
     bool possible = true;
     int64_t operations = 0;
     int64_t power = 1;    
-
+	  
     priority_queue<int64_t> heap;
     for (const auto& [location, extra, type] : hurdles_and_power_ups) {
       if (type == 1) {
 	heap.push(extra);
       } else {
 	int64_t distance = extra - location; 
+	
 	while (power <= distance + 1) {
 	  if (heap.empty()) {
 	    possible = false;
