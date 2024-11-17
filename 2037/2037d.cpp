@@ -36,17 +36,16 @@ int main(int argc, char* argv[]) {
 
     sort(hurdles_and_power_ups.begin(), hurdles_and_power_ups.end());
 
-    bool possible = true;
+    priority_queue<int64_t> heap;
     int64_t operations = 0;
     int64_t power = 1;    
 	  
-    priority_queue<int64_t> heap;
+    bool possible = true;
     for (const auto& [location, extra, type] : hurdles_and_power_ups) {
       if (type == 1) {
 	heap.push(extra);
       } else {
 	int64_t distance = extra - location; 
-	
 	while (power <= distance + 1) {
 	  if (heap.empty()) {
 	    possible = false;
