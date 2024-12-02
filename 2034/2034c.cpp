@@ -26,14 +26,12 @@ int main(int argc, char* argv[]) {
     }
 
     const auto is_valid = [&] (const pair<int, int>& coord) -> bool {
-      const int valid_x = coord.first;
-      const int valid_y = coord.second;
+      const auto& [valid_x, valid_y] = coord;
       return (valid_x < n) && (valid_y < m) && (valid_x >= 0) && (valid_y >= 0);
     };
 
     const auto is_exit = [&] (const pair<int, int>& coord) -> bool {
-      const int exit_x = coord.first;
-      const int exit_y = coord.second;
+      const auto& [exit_x, exit_y] = coord;
       return ((exit_x == n - 1) && (maze[exit_x][exit_y] == 'D')) ||
           ((exit_x == 0) && (maze[exit_x][exit_y] == 'U')) ||
           ((exit_y == m - 1) && (maze[exit_x][exit_y] == 'R')) ||
@@ -52,16 +50,11 @@ int main(int argc, char* argv[]) {
     }
 
     while (!bfs.empty()) {
-      const auto curr = bfs.front();
+      const auto [curr_x, curr_y] = bfs.front();
       bfs.pop();
-      const int curr_x = curr.first;
-      const int curr_y = curr.second;
 
       for (int i = 0; i < 4; ++i) {
-        const pair<int, int>& dir = directions[i];
-        const int dx = dir.first;
-        const int dy = dir.second;
-
+        const auto& [dx, dy] = directions[i];
         const int next_x = curr_x + dx;
         const int next_y = curr_y + dy;
 
@@ -82,16 +75,11 @@ int main(int argc, char* argv[]) {
     }
 
     while (!bfs.empty()) {
-      const auto curr = bfs.front();
+      const auto [curr_x, curr_y] = bfs.front();
       bfs.pop();
-      const int curr_x = curr.first;
-      const int curr_y = curr.second;
       int surround = 0;
 
-      for (const auto& dir: directions) {
-        const int dx = dir.first;
-        const int dy = dir.second;
-
+      for (const auto& [dx, dy]: directions) {
         const int next_x = curr_x + dx;
         const int next_y = curr_y + dy;
 
