@@ -23,7 +23,7 @@ int main(int argc, char* argv[]) {
     int64_t result{};
     int64_t zero_temp{};
 
-    for (int i = 0; i < s.size(); ++i) {
+    for (int i = 0; i < n; ++i) {
       if (s[i] == '0') {
         ++zero_temp;
       } else {
