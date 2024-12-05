@@ -19,7 +19,6 @@ int main(int argc, char* argv[]) {
         
         int max_available_target = curr_num;
         int max_available_index = i;
-        
         for (int j = i; j <= i + right_bound && j < result.size(); ++j) {
           const int target_num = result[j] - '0';
           const int ops = j - i;
