@@ -13,7 +13,7 @@ int main(int argc, char* argv[]) {
     cin >> result;
     
     for (int i = 0; i < result.size(); ++i) {
-      if ((result[i] != '9')) {
+      if (result[i] != '9') {
         const int curr_num = result[i] - '0';
         const int right_bound = 8 - curr_num;
         
