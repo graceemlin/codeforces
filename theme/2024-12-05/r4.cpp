@@ -34,17 +34,18 @@ int main(int argc, char* argv[]) {
       suffix[i] = sum;
     }
 
-    int mx_global = 0;
-    int mx_local = 0;
+    int mx_global{};
+    int mx_local{};
     for (int alice_candies = 0; alice_candies < n; ++alice_candies) {
-      auto bob_match = lower_bound(suffix.begin(), suffix.end(), prefix[alice_candies]);
-      if (bob_match != suffix.end() && (*bob_match == prefix[alice_candies])) {
-        const int bob_candies = distance(suffix.begin(), bob_match) + 2;
-        if (alice_candies + bob_candies > n) {
-          continue;
+      auto bob_search = lower_bound(suffix.begin(), suffix.end(), prefix[alice_candies]);  
+      bool bob_match_found = bob_search != suffix.end() && *bob_search == prefix[alice_candies]; 
+      
+      if (bob_match_found) {
+        const int bob_candies = distance(suffix.begin(), bob_search) + 2;
+        if (alice_candies + bob_candies <= n) {
+          mx_local = alice_candies + bob_candies;
+          mx_global = max(mx_global, mx_local);
         }
-        mx_local = alice_candies + bob_candies;
-        mx_global = max(mx_global, mx_local);
       }
     }
 
