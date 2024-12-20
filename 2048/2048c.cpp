@@ -1,6 +1,7 @@
 #include <bits/stdc++.h>
 #include <climits>
 #include <cstddef>
+#include <string_view>
 
 using namespace std;
 
@@ -11,10 +12,11 @@ int main(int argc, char* argv[]) {
   cin >> t;
   
   while (t--) {
-    string s;
-    cin >> s;
-
-    int n = s.size();
+    string _;
+    cin >> _;
+    string_view s = _;
+    
+    const int n = s.size();
     cout << 1 << ' ' << n << ' ';
 
     size_t first_zero = s.find("0");
@@ -23,15 +25,15 @@ int main(int argc, char* argv[]) {
     }
     
     const int required_length = n - first_zero;
-    const string original = s.substr(first_zero, required_length);
+    string_view original = s.substr(first_zero, required_length);
 
     string max_str = "";
     int start_index = 0;
     for (int i = 0; i < n - required_length; ++i) {
-      const string current = s.substr(i, required_length);
+      string_view current = s.substr(i, required_length);
       string compare = "";
       for (int j = 0; j < required_length; ++j) {
-        compare += to_string((original[j]) ^ (current[j]));
+        compare += to_string(original[j] ^ current[j]);
       }
 
       if (compare > max_str) {
