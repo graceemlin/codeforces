@@ -27,8 +27,8 @@ int main(int argc, char* argv[]) {
     const int required_length = n - first_zero;
     string_view original = s.substr(first_zero, required_length);
 
-    string max_str = "";
     int start_index{};
+    string max_str = "";
     for (int i = 0; i < n - required_length; ++i) {
       string_view current = s.substr(i, required_length);
       string compare = "";
@@ -37,8 +37,8 @@ int main(int argc, char* argv[]) {
       }
 
       if (compare > max_str) {
-        max_str = compare;
         start_index = i;
+        max_str = compare;
       }
     }
 
