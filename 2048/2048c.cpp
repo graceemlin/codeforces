@@ -28,7 +28,7 @@ int main(int argc, char* argv[]) {
     string_view original = s.substr(first_zero, required_length);
 
     string max_str = "";
-    int start_index = 0;
+    int start_index{};
     for (int i = 0; i < n - required_length; ++i) {
       string_view current = s.substr(i, required_length);
       string compare = "";
