@@ -55,9 +55,7 @@ int main(int argc, char* argv[]) {
 	continue;
       }
       
-      if (valid(new_x, new_y) &&
-	  grid[new_x][new_y] != '.' &&
-	  !visited[new_x][new_y]) {
+      if (valid(new_x, new_y) && grid[new_x][new_y] != '.' && !visited[new_x][new_y]) {
 	step = next_step;
 	result += commands[i];
 	break;
