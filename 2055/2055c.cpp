@@ -40,15 +40,17 @@ int main(int argc, char* argv[]) {
       }
     }
 
-    for (int step = 0, i = 0, j = 0; step < directions.size(); ++step) {
+    int curr_y = 0;
+    int curr_x = 0;
+    for (int step = 0; step < n + m - 2; ++step) {
       if (directions[step] == 'D') {
-	grid[i][j] = -row_sums[i];
-	col_sums[j] += grid[i][j];
-	++i;
+	grid[curr_y][curr_x] = -row_sums[curr_y];
+	col_sums[curr_x] += grid[curr_y][curr_x];
+	++curr_y;
       } else {
-	grid[i][j] = -col_sums[j];
-	row_sums[i] += grid[i][j];
-	++j;
+	grid[curr_y][curr_x] = -col_sums[curr_x];
+	row_sums[curr_y] += grid[curr_y][curr_x];
+	++curr_x;
       }
     }
 
