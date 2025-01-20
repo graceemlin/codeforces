@@ -23,7 +23,6 @@ int main(int argc, char* argv[]) {
     sort(elements.rbegin(), elements.rend());
 
     int score{};
-    
     int left{};
     int right = n - 1;
     while (left < right) {
