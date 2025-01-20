@@ -27,8 +27,7 @@ int main(int argc, char* argv[]) {
 	} else if (j < i && adjacency_matrix[i][j] == '1') {
 	  ++index;
 	}
-      }
-      
+      }  
       permutation[index] = i + 1;
     }
     
