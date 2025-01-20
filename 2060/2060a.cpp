@@ -17,7 +17,9 @@ int main(int argc, char* argv[]) {
     }
 
     int maximum_fibonacciness{};
-    const int options[3] = {(elements[0] + elements[1]), (elements[3] - elements[1]), (elements[4] - elements[3])};
+    const int options[3] = {(elements[0] + elements[1]), 
+	  (elements[3] - elements[1]), 
+	  (elements[4] - elements[3])};
     for (int i = 0; i < 3; ++i) {
       int current_fibonacciness{};
       elements[2] = options[i];
