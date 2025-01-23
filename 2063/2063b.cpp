@@ -23,7 +23,7 @@ int main(int argc, char* argv[]) {
 
     const int k = r - l + 1;
     
-    auto k_largest = [&] (const int left_index, const int right_index) -> int64_t {
+    const auto k_largest = [&] (const int left_index, const int right_index) -> int64_t {
       priority_queue<int> heap;
       int64_t sum{};
       
