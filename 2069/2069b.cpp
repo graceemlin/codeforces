@@ -47,7 +47,7 @@ int main(int argc, char* argv[]) {
       }
     }
 	
-    for (const auto num : seen) {
+    for (const int num : seen) {
       if (color_to_cost[num] == 0) {
 	++color_to_cost[num];
       }
