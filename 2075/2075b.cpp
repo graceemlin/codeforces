@@ -31,6 +31,7 @@ int main(int argc, char* argv[]) {
       } 
     } else {
       priority_queue<int64_t, vector<int64_t>, greater<>> best_k_elements;
+
       for (int64_t i = 0; i < n; ++i) {
 	best_k_elements.push(a[i]);
 	if (best_k_elements.size() > (k + 1)) {
