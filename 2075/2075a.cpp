@@ -14,13 +14,13 @@ int main(int argc, char* argv[]) {
     int k;
     cin >> k;
     
-    int64_t ops{};
+    int64_t operations{};
     if (n % 2) {
-      ops = (((n - k) + (k - 2)) / (k - 1)) + 1;
+      operations = (((n - k) + (k - 2)) / (k - 1)) + 1;
     } else {
-      ops = (n + (k - 2)) / (k - 1);
+      operations = (n + (k - 2)) / (k - 1);
     }
 
-    cout << ops << endl;
+    cout << operations << endl;
   }
 }
