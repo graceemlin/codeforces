@@ -41,8 +41,8 @@ int main(int argc, char* argv[]) {
       continue;
     }
 
-    set<char> st(r.begin(), r.end());
-    possible |= st.size() > 1;
+    set<char> exists(r.begin(), r.end());
+    possible |= exists.size() > 1;
     
     cout << (possible ? "YES" : "NO") << endl;
   }
