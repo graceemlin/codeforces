@@ -12,7 +12,7 @@ Here are my Codeforces contest submissions!
 
 Solutions are organized into folders, each corresponding to a specific Codeforces contest.\
 Like many competitive programmers, I utilize C++ for its performance and comprehensive Standard Template Library (STL).\
-Please excuse the occasional lack of comments and any stylistic errors. \
+Please excuse the lack of comments and any stylistic errors. \
 During competitions, my primary focus is on solving problems efficiently.
 
 ### Favorite Resources :
